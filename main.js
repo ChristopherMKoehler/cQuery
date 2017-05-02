@@ -43,34 +43,40 @@ $l.ajax = options => {
     options.url += "?" + toQueryString(options.data);
   }
 
-  request.open(options.method, options.url, true);
-
-  request.onload = e => {
-    if(request.status === 200) {
-      options.success(request.response);
-    } else {
-      options.error(request.response);
-    }
+  function makeRequest (opts) {
+    return new Promise(function (resolve, reject) {
+      let xhr = new XMLHttpRequest();
+      xhr.open(opts.method, opts.url);
+      xhr.onload = function () {
+        if (this.status >= 200 && this.status < 300) {
+          resolve(xhr.response);
+        } else {
+          reject({
+            status: xhr.status,
+            statusText: xhr.statusText
+          });
+        }
+      };
+      
+      xhr.onerror = function () {
+        reject({
+          status: xhr.status,
+          statusText: xhr.statusText
+        });
+      };
+      xhr.send(opts.data);
+    });
   }
 
-  // let returnPromise = new Promise(
-  //   (resolve, reject) => {
-  //     if(request.status === 200) {
-  //       resolve(request.response);
-  //     } else {
-  //       reject(request.response);
-  //     }
-  //   }
-  // );
-  //
-  // returnPromise.then((fromResolve) => {
-  //   console.log(fromResolve);
-  // }).catch((fromReject) => {
-  //   console.log(fromReject);
-  // });
-  //
-  // return returnPromise;
-  request.send(options.data);
+  makeRequest(options)
+  .then(function () {
+    return makeRequest(options);
+  })
+  .catch(function (err) {
+    console.error('Error:', err.statusText);
+  });
+
+  return makeRequest(options);
 }
 
 const toQueryString = obj => {
