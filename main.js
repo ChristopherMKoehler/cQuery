@@ -38,7 +38,7 @@ $l.ajax = options => {
   options = $l.extend(defaults, options);
   options.method = options.method.toUpperCase();
 
-  if(options.method === "GET") {
+  if (options.method === "GET") {
     options.url += "?" + toQueryString(options.data);
   }
 
