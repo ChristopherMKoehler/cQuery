@@ -26,7 +26,6 @@ $l.extend = (...objects) => {
 }
 
 $l.ajax = options => {
-  let request  = new XMLHttpRequest();
   let defaults = {
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     method: "GET",
@@ -57,7 +56,7 @@ $l.ajax = options => {
           });
         }
       };
-      
+
       xhr.onerror = function () {
         reject({
           status: xhr.status,
