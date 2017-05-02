@@ -108,7 +108,7 @@ class DOMNodeCollection {
   off(type) {
     for(let i = 0; i < this.htmlElements.length; i++) {
       let callbacks = this.htmlElements[i][`jQLiteEvents-${type}`];
-      debugger
+       
       if(callbacks) {
         callbacks.forEach(callback => {
           this.htmlElements[i].removeEventListener(type, callback)
