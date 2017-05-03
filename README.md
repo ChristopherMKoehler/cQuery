@@ -24,3 +24,21 @@ cQuery is a functional clone of jQuery using Vanilla JavaScript DOM manipulation
     6) Any data to include in the request
 
   This object is merged with a defaults object using our extend function. This object is used in a promise to make the request and allow the user to make then statements on what to do with the repsonse of their request.
+
+
+### DOMNodeCollection
+
+  This is a class wrapper that provides extensive functionality to the html elements provided to it.
+  The following are the methods included in the class.
+
+  1) html -> replaces the inner html of each of the elements with the inputted string
+  2) empty -> clears the inner html of all of the elements in the collection
+  3) append -> add html of either a html element, a string, or a whole DOMNodeCollection to the       elements that exist in the current DOMNodeCollection
+  4) attr -> returns the attribute that corresponds to the attributeName inputted to the function
+  5) add/removeClass -> adds/removes a class from each of the elements in the DOMNodeCollection
+  6) children -> returns a DOMNodeCollection of all of the children of all of the elements in the current DOMNodeCollection
+  7) parent -> returns the parents of each element as a DOMNodeCollection
+  8) find -> locates and returns an element that matches the selector given to the function
+  9) remove -> removes all of the elements from the DOMNodeCollection
+  10) on -> adds an event listener to the elements with a type and an action callback
+  11) off -> turns off the event listeners set up by the on function
