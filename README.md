@@ -8,10 +8,34 @@ cQuery is a functional clone of jQuery using Vanilla JavaScript DOM manipulation
 
   This is the primary way to create a collection of HTML Elements to manipulate. It will behave differently depending on what type of input you give it. If you give it a string, it will search the document for elements that have that tag name. If the input is a HTMLElement, the function will wrap it in my DOMNodeCollection class, which gives it all of the functionality. Finally, if its a function, it queues it to be called once the document is ready, or, if the document is already ready, it calls it.
 
+
+  ```JavaScript
+      if (typeof tagName === 'string') {
+        const htmlElements = Array.from(document.querySelectorAll(tagName));
+        return new DOMNodeCollection(htmlElements);
+      } else if (tagName instanceof HTMLElement) {
+        const htmlElements = [tagName];
+        return new DOMNodeCollection(htmlElements);
+      } else if(typeof tagName === "function") {
+        !_docReady ? _docReadyCallbacks.push(tagName) : tagName();
+      } else {
+        throw new TypeError("Invalid input.");
+      }
+  ```
+
 ### $l.extend
 
   This function is similar to Lodash's merge function. It creates a deep clone of an object and merges it with the rest of the inputs to the function, which should also be objects.
 
+  ```JavaScript
+    $l.extend = (...objects) => {
+      const mergedObj = objects[0];
+      objects.slice(1).forEach((obj) => {
+        Object.keys(obj).forEach((key) => mergedObj[key] = obj[key])
+      });
+      return mergedObj;
+    }
+  ```
 
 ### $l.ajax
 
@@ -23,7 +47,37 @@ cQuery is a functional clone of jQuery using Vanilla JavaScript DOM manipulation
     5) error callback
     6) Any data to include in the request
 
-  This object is merged with a defaults object using our extend function. This object is used in a promise to make the request and allow the user to make then statements on what to do with the repsonse of their request.
+  This object is merged with a defaults object using our extend function and is reformatted to have a standard method casing and have the url contain an appropriate query string.
+
+  ```JavaScript
+    let defaults = {
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      method: "GET",
+      url: "",
+      success: () => {},
+      error: () => {},
+      data: {},
+    }
+
+    options = $l.extend(defaults, options);
+    options.method = options.method.toUpperCase();
+
+    if (options.method === "GET") {
+      options.url += "?" + toQueryString(options.data);
+    }
+  ```
+
+  The toQueryString function is just a helper to convert the data to a query string.
+
+  ```JavaScript
+    const toQueryString = obj => {
+      let result = "";
+      Object.keys(obj).forEach(key => result += key + "=" + obj[key] + "&");
+      return result.substring(0, result.length - 1);
+    }
+
+  ```
+  This object is used in a promise to make the request and allow the user to make then statements on what to do with the repsonse of their request.
 
 
 ### DOMNodeCollection
