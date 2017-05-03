@@ -97,7 +97,7 @@ class DOMNodeCollection {
   on(type, callback) {
     for(let i = 0; i < this.htmlElements.length; i++) {
       this.htmlElements[i].addEventListener(type, callback);
-      const eventKey = `jQLiteEvents-${type}`;
+      const eventKey = `cQEvents-${type}`;
       if (!this.htmlElements[i][eventKey]) {
         this.htmlElements[i][eventKey] = [];
       }
@@ -107,8 +107,8 @@ class DOMNodeCollection {
 
   off(type) {
     for(let i = 0; i < this.htmlElements.length; i++) {
-      let callbacks = this.htmlElements[i][`jQLiteEvents-${type}`];
-       
+      let callbacks = this.htmlElements[i][`cQEvents-${type}`];
+
       if(callbacks) {
         callbacks.forEach(callback => {
           this.htmlElements[i].removeEventListener(type, callback)
@@ -119,7 +119,7 @@ class DOMNodeCollection {
     }
   }
 
-  
+
  }
 
 module.exports = DOMNodeCollection;
