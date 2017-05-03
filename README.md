@@ -1,6 +1,6 @@
 ## cQuery
 
-cQuery is a functional clone of jQuery using Vanilla JavaScript DOM manipulation to achieve the vast functionality that made jQuery an industry standard.
+cQuery is a lightweight DOM manipulation library using Vanilla JavaScript DOM manipulation to achieve the vast functionality for controlling the elements of a webpage.
 
 ### Notable Functions
 
@@ -39,7 +39,7 @@ cQuery is a functional clone of jQuery using Vanilla JavaScript DOM manipulation
 
 ### $l.ajax
 
-  This function handles making HTTP requests as it does in jQuery. It takes an options object which could contain some of the following:
+  This function handles making HTTP requests. It takes an options object which could contain some of the following:
     1) contentType
     2) method - (GET, PATCH, DELETE, POST, etc..)
     3) url - the location to dispatch the request to
