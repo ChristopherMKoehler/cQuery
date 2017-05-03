@@ -95,4 +95,15 @@ cQuery is a lightweight DOM manipulation library using Vanilla JavaScript DOM ma
   8) find -> locates and returns an element that matches the selector given to the function
   9) remove -> removes all of the elements from the DOMNodeCollection
   10) on -> adds an event listener to the elements with a type and an action callback
+
+  ```JavaScript
+    //example
+    $l.("button").on("click", () => alert("You clicked the button!"));
+  ```
   11) off -> turns off the event listeners set up by the on function
+
+  ```JavaScript
+    //example
+    $l.("button").off("click");
+    //This turns off the on click we put on in the on example
+  ```
