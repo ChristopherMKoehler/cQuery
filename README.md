@@ -85,22 +85,22 @@ cQuery is a lightweight DOM manipulation library using Vanilla JavaScript DOM ma
   This is a class wrapper that provides extensive functionality to the html elements provided to it.
   The following are the methods included in the class.
 
-  1) ```JavaScript html() ``` -> replaces the inner html of each of the elements with the inputted string
-  2) ```JavaScript empty() ```-> clears the inner html of all of the elements in the collection
-  3) ```JavaScript append() ```-> add html of either a html element, a string, or a whole DOMNodeCollection to the       elements that exist in the current DOMNodeCollection
-  4) ```JavaScript attr() ```-> returns the attribute that corresponds to the attributeName inputted to the function
-  5) ```JavaScript add/removeClass() ```-> adds/removes a class from each of the elements in the DOMNodeCollection
-  6) ```JavaScript children() ```-> returns a DOMNodeCollection of all of the children of all of the elements in the current DOMNodeCollection
-  7) ```JavaScript parent() ```-> returns the parents of each element as a DOMNodeCollection
-  8) ```JavaScript find() ```-> locates and returns an element that matches the selector given to the function
-  9) ```JavaScript remove() ```-> removes all of the elements from the DOMNodeCollection
-  10) ```JavaScript on() ```-> adds an event listener to the elements with a type and an action callback
+  1) ``` html() ``` -> replaces the inner html of each of the elements with the inputted string
+  2) ``` empty() ```-> clears the inner html of all of the elements in the collection
+  3) ``` append() ```-> add html of either a html element, a string, or a whole DOMNodeCollection to the       elements that exist in the current DOMNodeCollection
+  4) ``` attr() ```-> returns the attribute that corresponds to the attributeName inputted to the function
+  5) ``` add/removeClass() ```-> adds/removes a class from each of the elements in the DOMNodeCollection
+  6) ``` children() ```-> returns a DOMNodeCollection of all of the children of all of the elements in the current DOMNodeCollection
+  7) ``` parent() ```-> returns the parents of each element as a DOMNodeCollection
+  8) ``` find() ```-> locates and returns an element that matches the selector given to the function
+  9) ``` remove() ```-> removes all of the elements from the DOMNodeCollection
+  10) ``` on() ```-> adds an event listener to the elements with a type and an action callback
 
   ```JavaScript
     //example
     $l.("button").on("click", () => alert("You clicked the button!"));
   ```
-  11) ```JavaScript off() ```-> turns off the event listeners set up by the on function
+  11) ``` off() ```-> turns off the event listeners set up by the on function
 
   ```JavaScript
     //example
