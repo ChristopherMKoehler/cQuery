@@ -100,7 +100,7 @@ cQuery is a lightweight DOM manipulation library using Vanilla JavaScript DOM ma
     //example
     $l.("button").on("click", () => alert("You clicked the button!"));
   ```
-  11) ```JavaScript off ```-> turns off the event listeners set up by the on function
+  11) ```JavaScript off() ```-> turns off the event listeners set up by the on function
 
   ```JavaScript
     //example
