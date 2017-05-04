@@ -107,3 +107,8 @@ cQuery is a lightweight DOM manipulation library using Vanilla JavaScript DOM ma
     $l.("button").off("click");
     //This turns off the on click we put on in the on example
   ```
+
+### How to use the demo
+
+Open demo.html in your browser and open up the developer tools. The functionality of this library has been placed on the window for you.
+Try removing elements from the page, adding elements, and making the useless button not so useless with the on function. A quick callback to give to on is alert so you can immediately see the results of your handy work.
