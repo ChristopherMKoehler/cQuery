@@ -111,9 +111,8 @@ cQuery is a lightweight DOM manipulation library using Vanilla JavaScript DOM ma
 ### How to use the demo
 
 1) Clone this repository
-2) Run ```webpack -w``` to bundle everything up for you
-3) Open the demo.html file that is found inside of the demo folder in your browser, which will show a few different html elements
-4) Open the developer tools (function + f12 on Windows, command + option + i on Mac)
-5) In the console, use $l to select the elements from the html that you woul like to manipulate (eg. $l("button") will select the "Useless Button")
-6) Use an action defined above to manipulate those elements. Try $l("button").on("click", () => alert("You pressed the useless button")) and then click on the useless button to see what happens.
-7) Feel free to try this out on your own html docs or add more elements to this document.
+2) Open the demo.html file that is found inside of the demo folder in your browser, which will show a few different html elements
+3) Open the developer tools (function + f12 on Windows, command + option + i on Mac)
+4) In the console, use $l to select the elements from the html that you woul like to manipulate (eg. $l("button") will select the "Useless Button")
+5) Use an action defined above to manipulate those elements. Try $l("button").on("click", () => alert("You pressed the useless button")) and then click on the useless button to see what happens.
+6) Feel free to try this out on your own html docs or add more elements to this document.
