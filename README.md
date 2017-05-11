@@ -1,6 +1,6 @@
 ## cQuery
 
-cQuery is a lightweight DOM manipulation library using Vanilla JavaScript DOM manipulation to achieve vast functionality for controlling the elements of a webpage.
+cQuery is a lightweight DOM manipulation library using Vanilla JavaScript DOM manipulation that allows for controlling the elements of a webpage.
 
 ### Notable Functions
 
