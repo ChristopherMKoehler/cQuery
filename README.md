@@ -25,7 +25,7 @@ cQuery is a lightweight DOM manipulation library using Vanilla JavaScript DOM ma
 
 ### $l.extend
 
-  This function is similar to Lodash's merge function. It creates a deep clone of an object and merges it with the rest of the inputs to the function, which should also be objects.
+  This function is similar to Lodash's merge function. It creates a shallow clone of an object and merges it with the rest of the inputs to the function, which should also be objects.
 
   ```JavaScript
     $l.extend = (...objects) => {
