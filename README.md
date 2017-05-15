@@ -58,7 +58,7 @@ cQuery is a lightweight DOM manipulation library using Vanilla JavaScript DOM ma
       data: {},
     }
 
-    options = $l.extend(defaults, options);
+    options = $l.extend({}, defaults, options);
     options.method = options.method.toUpperCase();
 
     if (options.method === "GET" && Object.keys(options.data).length != 0) {
